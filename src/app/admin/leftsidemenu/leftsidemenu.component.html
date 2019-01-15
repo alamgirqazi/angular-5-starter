@@ -1,0 +1,66 @@
+<div id="aside" class="app-aside fade nav-dropdown folded black" [ngClass]="{'folded':!isClosedNav}">
+  <!-- fluid app aside -->
+  <div class="navside dk" data-layout="column">
+    <div class="navbar no-radius">
+      <!-- brand -->
+      <a class="navbar-brand">
+        <span class="hidden-folded inline">Angular 5 Starter</span>
+      </a>
+      <!-- / brand -->
+    </div>
+    <div data-flex="" class="hide-scroll">
+      <nav class="scroll nav-stacked nav-stacked-rounded nav-color">
+        <ul class="nav" data-ui-nav="">
+
+          <li routerLinkActive="active" data-toggle="tooltip" data-placement="right">
+            <a routerLink="/admin/todos" title="Todos">
+              <span class="nav-icon">
+                <i class="fa font-20 fa-dashboard"></i>
+              </span>
+              <span class="nav-text">Todos</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+    <div>
+      <div class="data-flex-no-shrink">
+
+        <div class="nav-fold nav-foot dropup" [class.open]='isPopup'>
+          <a (click)="togglePopup($event)" class="" data-toggle="dropdown">
+            <div class="pull-left">
+              <div class="inline inline-icon">
+                <span class="link-b ">
+                  <i class="material-icons">
+                    settings
+                  </i>
+                </span>
+              </div>
+            </div>
+            <div class="clear txt hidden-folded p-x">
+              <span class="block _500 text-muted">Some Name...</span>
+              <div class="progress-xxs hide m-y-sm lt progress">
+                <div class="progress-bar warning" style="width: 15%;">
+                </div>
+              </div>
+            </div>
+          </a>
+          <div class="dropdown-menu w dropdown-menu-scale " *ngIf="isPopup">
+            <a class="dropdown-item" routerLink="/admin/profile">
+              <span>My Profile</span>
+            </a>
+            <ul class="list-inline">
+              <li><a class="dropdown-item" target="_blank"><i class="material-icons">help</i> Help</a></li>
+              <li><a class="dropdown-item" (click)="logout()"><i class="material-icons">power_settings_new</i> Sign out</a></li>
+            </ul>
+          </div>
+          <span class="footer-icon" (click)="toggleMenu()">
+            <i *ngIf="isClosedNav" class="menu-icon fa fa-chevron-left"></i>
+            <i *ngIf="!isClosedNav" class="fa fa-chevron-right" aria-hidden="true"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

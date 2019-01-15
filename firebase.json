@@ -1,0 +1,14 @@
+ {
+   "storage": {
+     "rules": "storage.rules"
+   },
+
+   "hosting": [{
+     "target": "prod",
+     "public": "dist",
+     "rewrites": [{
+       "source": "**",
+       "destination": "/index.html"
+     }]
+   }]
+ }
