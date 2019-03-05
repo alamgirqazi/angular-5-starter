@@ -46,8 +46,11 @@
                   <!-- routerLink="/admin/dashboard" -->
                   <button class="btn btn-block btn-primary" (click)="login()" id="btn-login" type="submit">
                     <i *ngIf="isLoading" class="fa fa-circle-o-notch fa-spin btn-spinner"></i>
+
                     <span *ngIf="!isLoading">Log In</span>
                   </button>
+                  username: admin@mail.com
+                  password: 123456
                 </div>
 
               </form>
